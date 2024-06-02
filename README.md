@@ -1,6 +1,8 @@
 # itemrestrictions
 This addon allows you to edit the access of certain usergroups to entities and weapons
 
+Console command to open the menu: `itemrestrictions_menu`
+
 🔧 [Mantle](https://github.com/darkfated/mantle): in order for the system to work, you need to use this Gmod library
 
 ## Screenshots 🖼️
