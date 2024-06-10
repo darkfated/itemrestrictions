@@ -28,7 +28,7 @@ local function CanPlayerUse(t, pl, class)
     end
 
     if !has_access then
-        Mantle.notify(pl, color_theme, 'ItemRestrictions', 'Нету доступа к ' .. class)
+        Mantle.notify(pl, color_theme, 'ItemRestrictions', 'There is no access to ' .. class)
     end
 
     return has_access
@@ -52,7 +52,7 @@ end)
 
 hook.Add('CanTool', 'ItemRestrictions', function(pl, _, mode)
     if ItemRestrictions.cfg.hide_tools[mode] then
-        Mantle.notify(pl, color_theme, 'ItemRestrictions', 'Нету доступа к инструменту ' .. mode)
+        Mantle.notify(pl, color_theme, 'ItemRestrictions', 'There is no access to the tool: ' .. mode)
 
         return false
     end
