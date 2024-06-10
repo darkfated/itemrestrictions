@@ -20,10 +20,10 @@ local function CanPlayerUse(t, pl, class)
     local group = pl:GetUserGroup()
     local has_access = false
 
-    if ItemRestrictions.access[t][group] then
-        if pl:IsSuperAdmin() then return true end
-        if group == 'root' then return true end
+    if pl:IsSuperAdmin() then return true end
+    if group == 'root' then return true end
 
+    if ItemRestrictions.access[t][group] then
         has_access = table.HasValue(ItemRestrictions.access[t][group], class)
     end
 
