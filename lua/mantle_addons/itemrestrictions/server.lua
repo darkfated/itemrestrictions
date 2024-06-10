@@ -14,7 +14,7 @@ hook.Add('Initialize', 'ItemRestrictions.LoadData', function()
 end)
 
 // Checks
-local color_theme = Color(82, 222, 192)
+local color_theme = Color(64, 179, 154)
 
 local function CanPlayerUse(t, pl, class)
     local group = pl:GetUserGroup()
@@ -34,11 +34,11 @@ local function CanPlayerUse(t, pl, class)
     return has_access
 end
 
-hook.Add('PlayerGiveSWEP', 'CheckSWEPAccess', function(pl, class)
+hook.Add('PlayerGiveSWEP', 'ItemRestrictions', function(pl, class)
     return CanPlayerUse('Weapon', pl, class)
 end)
 
-hook.Add('PlayerSpawnSWEP', 'CheckSWEPAccess', function(pl, class)
+hook.Add('PlayerSpawnSWEP', 'ItemRestrictions', function(pl, class)
     return CanPlayerUse('Weapon', pl, class)
 end)
 
@@ -48,4 +48,12 @@ end)
 
 hook.Add('PlayerSpawnProp', 'ItemRestrictions', function(pl)
     return CanPlayerUse('SpawnableEntities', pl, 'prop_physics')
+end)
+
+hook.Add('CanTool', 'ItemRestrictions', function(pl, _, mode)
+    if ItemRestrictions.cfg.hide_tools[mode] then
+        Mantle.notify(pl, color_theme, 'ItemRestrictions', 'Нету доступа к инструменту ' .. mode)
+
+        return false
+    end
 end)

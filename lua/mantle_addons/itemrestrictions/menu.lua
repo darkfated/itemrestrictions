@@ -90,7 +90,7 @@ local function Open(active_usergroup)
     btn_usergroup.DoClick = function()
         local DM = Mantle.ui.derma_menu()
 
-        for _, v in ipairs(ItemRestrictions.usergroups) do
+        for _, v in ipairs(ItemRestrictions.cfg.usergroups) do
             DM:AddOption(v, function()
                 active_usergroup = v
                 

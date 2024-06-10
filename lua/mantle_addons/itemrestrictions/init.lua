@@ -8,6 +8,7 @@ local function run_scripts()
 	Mantle.run_cl('config.lua')
 	Mantle.run_sv('config.lua')
 
+	Mantle.run_cl('client.lua')
 	Mantle.run_sv('server.lua')
 
 	Mantle.run_sv('nets.lua')
@@ -17,7 +18,9 @@ local function run_scripts()
 end
 
 local function init()
-	ItemRestrictions = ItemRestrictions or {}
+	ItemRestrictions = ItemRestrictions or {
+		cfg = {}
+	}
 
 	run_scripts()
 end
