@@ -1,5 +1,10 @@
 # itemrestrictions
-This addon allows you to edit the access of certain usergroups to entities and weapons
+This addon allows you to limit and customize certain game items for your server
+
+**Opportunities:**
+- Choose which entities and sweps to prohibit and restrict for a particular usergroup
+- Remove access to tools (with their removal from the SpawnMenu list)
+- And much more in the future!
 
 Console command to open the menu: `itemrestrictions_menu`
 
